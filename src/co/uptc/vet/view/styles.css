@@ -1,0 +1,118 @@
+
+
+#ventana {
+    -fx-background-color: rgb(  79, 137, 135  );
+    -fx-background-image: url("/co/uptc/vet/icon/huellaP.png");
+}
+
+#main {
+    -fx-background-color: rgb(  79, 137, 135  );
+    -fx-background-image: url("/co/uptc/vet/icon/huellaP.png");
+    
+}
+
+#imagenVeterinaria{
+	-fx-background-image: url("/co/uptc/vet/icon/logo.png");
+	-fx-border-color: white;
+	-fx-border-width: 3px;
+	
+	}
+#ImgUser{
+	-fx-background-image: url("/co/uptc/vet/icon/cliente.png");
+	-fx-border-color: white;
+	-fx-border-width: 3px;
+	-fx-border-radius: 10px;
+	-fx-background-color:  #ccd1d1;
+	
+}
+
+#titulo {
+-fx-text-fill:Orange;
+-fx-font-size:28px;
+-fx-alignment: top-center;
+-fx-text-alignment:center;
+}
+
+#titulo1{
+    -fx-text-fill:orange;
+    -fx-font-size:24px;
+}
+
+#btn_volver,#btn_salir {
+    -fx-font-size: 12px;
+    -fx-text-fill:sandybrown;
+    -fx-text-fill: black;
+}
+
+#btn_volver{
+	-fx-background-image: url("/co/uptc/vet/icon/regresar.png");
+	
+}
+
+#btn_salir {
+	-fx-background-image: url("/co/uptc/vet/icon/salir.png");
+	
+}
+
+#btnMostrarDatosMasc{
+	-fx-background-image: url("/co/uptc/vet/icon/save.png");
+}
+#btnMostrarDatosClien{
+	-fx-background-image: url("/co/uptc/vet/icon/save.png");
+}
+
+
+#btn_abrirVentana {
+	
+	-fx-background-image: url("/co/uptc/vet/icon/user.png");
+}
+
+.label {
+    -fx-text-fill: rgb( 255, 255, 255);
+  	-fx-font-size: 18;
+  	-fx-effect: dropshadow( one-pass-box , black , 5 , 0.0 , 2 , 0 );
+
+}
+#LbIngresarCliente{
+	-fx-font-size: 12;
+}
+
+ 
+ .button{
+    -fx-text-fill: #006464;
+    -fx-background-color:  #ccd1d1; 
+    -fx-border-radius: 10;
+    -fx-background-radius: 10px;
+}
+
+.button:hover {
+	-fx-text-fill: rgb( 0,0,0);
+    -fx-background-color: rgb(   252, 250, 164 );
+	-fx-border-color: rgb(  255, 255, 255   );
+	-fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+	-fx-cursor: HAND;
+}
+
+
+
+.text-field{
+    -fx-background-color: rgb( 255, 255, 255 ) ,rgb( 16, 35, 82 ) , rgb(  229, 247, 249 );
+    -fx-background-insets: 0,2,3,0, 1, 5 ,5 ,1, 0,-1 ,3-1;
+   	-fx-font-size: 14;
+   	-fx-font-family: "Segoe UI Semibold";
+}
+.text-field:focused {
+    -fx-background-color: #a9a9a9 , blue , rgb( 255, 255, 255 );  
+}
+.combo-box {
+	-fx-font-family: "Segoe UI Semibold";
+    -fx-background-color:  rgb( 255, 255, 255 ) ,rgb( 16, 35, 82 ) , rgb(  229, 247, 249 );
+    -fx-font-size: 15;
+    -fx-border-width: 1 1 1 1
+     
+}
+
+#fechaIngreso{
+	-fx-font-family: "Segoe UI Semibold";
+}
+
