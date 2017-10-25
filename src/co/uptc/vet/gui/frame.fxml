@@ -14,7 +14,7 @@
                <HBox.margin>
                   <Insets bottom="5.0" right="60.0" />
                </HBox.margin></Label>
-        <Button fx:id="button" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="65.0" text="SALIR">
+        <Button fx:id="button" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="70.0" text="SALIR">
                <HBox.margin>
                   <Insets left="200.0" />
                </HBox.margin></Button>
