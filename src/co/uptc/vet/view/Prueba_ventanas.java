@@ -24,10 +24,11 @@ public class Prueba_ventanas extends Application {
         this.mainScene=root;
         this.cargarVentana(ventana1);
         this.cargarVentana(marco);
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root, 500, 520);
        
         stage.setTitle("Aplicaion veterinaria");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
