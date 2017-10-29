@@ -9,7 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 
-public class Prueba_ventanas extends Application {
+public class Main extends Application {
     private Stage mainStage;
     private Group mainScene;
     
