@@ -25,6 +25,6 @@ public class frameController implements Initializable,ScreenControlable {
         // TODO
     }    
     
-    public void setMainApp(Prueba_ventanas mainApp){
+    public void setMainApp(Main mainApp){
     }
 }

@@ -30,7 +30,7 @@ public class SecundariaController implements Initializable, ScreenControlable {
     private TextField telefonoContacto;
 
     
-    private Prueba_ventanas mainApp;
+    private Main mainApp;
 
     /**
      * Initializes the controller class.
@@ -40,12 +40,12 @@ public class SecundariaController implements Initializable, ScreenControlable {
         // TODO
     }    
     
-    public void setMainApp(Prueba_ventanas mainApp){
+    public void setMainApp(Main mainApp){
         this.mainApp=mainApp;
     }
     @FXML
     private void volver(ActionEvent event) {
-        mainApp.cargarVentana(Prueba_ventanas.ventana1);
+        mainApp.cargarVentana(Main.ventana1);
     }
 
     @FXML

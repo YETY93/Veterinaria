@@ -33,7 +33,7 @@ public class PrincipalController implements Initializable, ScreenControlable {
 
 	
 	
-    private Prueba_ventanas mainApp;
+    private Main mainApp;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -43,13 +43,13 @@ public class PrincipalController implements Initializable, ScreenControlable {
 		tipoAnimCBOX.getSelectionModel().select("Gato");
     }    
 
-    public void setMainApp(Prueba_ventanas mainApp){
+    public void setMainApp(Main mainApp){
         this.mainApp=mainApp;
     }
     
     @FXML
     private void abrirVentana(ActionEvent event) {
-        mainApp.cargarVentana(Prueba_ventanas.ventana2);
+        mainApp.cargarVentana(Main.ventana2);
     }
     
     

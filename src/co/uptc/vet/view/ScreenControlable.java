@@ -2,5 +2,5 @@
 package co.uptc.vet.view;
 
 public interface ScreenControlable {
-    public void setMainApp(Prueba_ventanas mainApp);
+    public void setMainApp(Main mainApp);
 }
