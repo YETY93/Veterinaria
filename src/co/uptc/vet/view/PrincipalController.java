@@ -2,6 +2,8 @@
 package co.uptc.vet.view;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import co.uptc.vet.negocio.Mascota;
@@ -39,8 +41,8 @@ public class PrincipalController implements Initializable, ScreenControlable {
     public void initialize(URL url, ResourceBundle rb) {
 
 		tipoAnimCBOX.getItems().removeAll(tipoAnimCBOX.getItems());
-		tipoAnimCBOX.getItems().addAll("Gato", "Perico", "Perro");
-		tipoAnimCBOX.getSelectionModel().select("Gato");
+		tipoAnimCBOX.getItems().addAll("Seleccione", "Gato", "Perico", "Perro");
+		tipoAnimCBOX.getSelectionModel().select("Seleccione");
     }    
 
     public void setMainApp(Main mainApp){
@@ -58,7 +60,10 @@ public class PrincipalController implements Initializable, ScreenControlable {
     
     @FXML
     private void informacionCapturadaM (ActionEvent event){
+    	
     	Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+    	Alert errorDatosMascota = new Alert(Alert.AlertType.ERROR);
+    	
 		Mascota mascota= new Mascota();
 		
 		mascota.setNombre(idNombreMascota.getText());
@@ -66,39 +71,68 @@ public class PrincipalController implements Initializable, ScreenControlable {
 		mascota.setTipoAnimal(tipoAnimCBOX.getValue());
 		mascota.setRaza(idRazaMascota.getText());
 		mascota.setSintomas(idSintomasMascota.getText());
-		mascota.toString();
+	
 		
-		dialogoInfo.setTitle("Informacion de la mascota");
-
+		
+		List <String> datosMascota = new ArrayList<String>(5);
+		List <String> datosMascotaDeafaul = new ArrayList<String>(5);
+		
+		
+		// asignacion datos a las lista datosMascota
+		
 		if(mascota.getNombre().isEmpty()){
-    		dialogoInfo.setHeaderText("No hay infomacion a guardar en nombre");
-    		dialogoInfo.setContentText("Error almacenando informacion");
-    		
-		}else if (mascota.getEdad().isEmpty()){
-        		dialogoInfo.setHeaderText("No hay infomacion a guardar en edad ");
-        		dialogoInfo.setContentText("Error almacenando informacion");
+			datosMascota.add("Nombre Mascota Vacio");
+		}else {
+			datosMascota.add(mascota.getNombre());
+			}
+	
+		if (mascota.getEdad().isEmpty()){
+			datosMascota.add("Edad Mascota Vacio");
+		}else {
+			datosMascota.add(mascota.getNombre());
+			}
         		
-        }else if(mascota.getRaza().isEmpty()){
-        		dialogoInfo.setHeaderText("No hay infomacion a guardar en raza ");
-        		dialogoInfo.setContentText("Error almacenando informacion");
+        if(mascota.getRaza().isEmpty()){
+        	datosMascota.add("Raza Mascota Vacio");
+		}else {
+			datosMascota.add(mascota.getNombre());
+			}
         		
-        }else if(mascota.getSintomas().isEmpty()){
-        		dialogoInfo.setHeaderText("No hay infomacion a guardar en sintomas ");
-        		dialogoInfo.setContentText("Error almacenando informacion");   		
-		}else{
-    	
+        if(mascota.getSintomas().isEmpty()){
+        	datosMascota.add("Sintomas Mascota Vacio");
+		}else {
+			datosMascota.add(mascota.getNombre());
+			}  		
+	
+        
+     // asignacion datos a las lista por default
+        
+        datosMascotaDeafaul.add("Nombre Mascota Vacio");
+        datosMascotaDeafaul.add("Edad Mascota Vacio");
+        datosMascotaDeafaul.add("Raza Mascota Vacio");
+        datosMascotaDeafaul.add("Sintomas Mascota Vacio");
+			
+        if (datosMascota.equals(datosMascotaDeafaul)) {
+        	
+        	errorDatosMascota.setHeaderText("No hay imformacion a guardar");
+        	errorDatosMascota.setContentText("Por favor diligenciar Todos los Campos");
+        	errorDatosMascota.show();
+
+        }else	{
     	dialogoInfo.setHeaderText("Esta es la informacion \nbasica de la mascota" );
-    	dialogoInfo.setContentText("Nombre: " + mascota.getNombre()
-    			+ " \nEdad: " + mascota.getEdad() + " meses"
-    			+ " \nTipo de Animal: " + mascota.getTipoAnimal() 
-    			+ " \nRaza: " + mascota.getRaza() 
-    			+ " \nSintomas: " + mascota.getSintomas() 
+    	dialogoInfo.setContentText("Nombre: " + datosMascota.get(0).toUpperCase()
+    			+ " \nEdad: " + datosMascota.get(1) + " meses"
+    			+ " \nTipo de Animal: " + mascota.getTipoAnimal().toUpperCase()
+    			+ " \nRaza: " + datosMascota.get(2).toUpperCase()
+    			+ " \nSintomas: " + datosMascota.get(3).toUpperCase() 
     			);
 
-		}
+
+		
+		dialogoInfo.setTitle("Informacion de la mascota");
     	dialogoInfo.setResizable(false);
-    	
     	dialogoInfo.show();
+        }
     }
 		
 }
